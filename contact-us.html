@@ -33,8 +33,7 @@
 	<body>
 		<div class="main-page-wrapper">
 
-			
-<!-- Header _________________________________ -->
+			<!-- Header _________________________________ -->
 			<div class="header-style-two">
 				<header>
 					<div class="top-header">
@@ -50,8 +49,9 @@
 				                <li><a href="https://www.youtube.com/channel/UCeLDpdl_E3yBe-p5qcUVXRQ" class="tran3s"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
 				                <li><a href="https://www.linkedin.com/company/al-bassam-group-of-companies/" class="tran3s"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 		
-                                 <li class="lang-switch"><a href="index.html?lang=en" class="tran3s">En</a></li>
-                                 <li class="lang-switch"><a href="index-ar.html" class="tran3s">Ar</a></li> 
+                                <li class="lang-switch"><a href="#" id="switchEn" class="tran3s">En</a></li>
+                                <li class="lang-switch"><a href="#" id="switchAr" class="tran3s">Ar</a></li>
+    
 								
 							</ul>
 						</div>
@@ -116,38 +116,34 @@
       <a href="#" class="ps-parent">AB Energy</a>
       <ul class="ps-sub">
         <li><a href="techno-serve.html">Techno Serve</a></li>
-        <li><a href="saudioil.html">Saudi Oil Field</a></li>
+        <li><a href="saudi-oil.html">Saudi Oil Field</a></li>
       </ul>
     </li>
     <li class="ps-item">
       <a href="#" class="ps-parent">AB Industrial</a>
       <ul class="ps-sub">
         <li><a href="apeco.html">APECO</a></li>
-        <li><a href="gulf.html">GHI</a></li>
-        <li><a href="industrial.html">ISS</a></li>
+        <li><a href="ghi.html">GHI</a></li>
+        <li><a href="iss.html">ISS</a></li>
         <li><a href="#">Paper Factory</a></li>
         <li><a href="saudiwater.html">Saudi Water Treatment</a></li>
-        <li><a href="#">Advanced Laboratory For Testing Materials</a></li>
+        <li><a href="Inspection&Testing.html">Advanced Laboratory </a></li>
       </ul>
     </li>
     <li class="ps-item">
       <a href="#" class="ps-parent">Consumer & Real-estate</a>
       <ul class="ps-sub">
-        <li><a href="realestate.html">Real Estate</a></li>
-        <li><a href="travel.html">Travel & Tourism</a></li>
-    
+        <li><a href="realestate-s.html">Real Estate</a></li>
+        <li><a href="tourism.html">Travel & Tourism</a></li>
       </ul>
     </li>
+	<li class="ps-item">
+		<a href="bits.html" class="ps-parent">AB Technology</a>	
+	</li>
   </ul>
-</li>						       				       
-                                  <li class="current-page-item"><a href="about-us.html">About Us</a></li>
+</li>						       				      
+ <li class="current-page-item"><a href="about-us.html">About Us</a></li>
 
-							   <!--  <li class="dropdown-holder"><a href="#">News <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-							       		<ul class="sub-menu">
-							       			<li><a href="blog.html">Blog</a></li>
-							       			<li><a href="blog-details.html">Blog Details</a></li>
-							       		</ul>
-							       </li>-->
 							       <li><a href="contact-us.html">Contact us</a></li>
 							     </ul>
 							   </div>
@@ -160,8 +156,6 @@
 					</div> <!-- /.container -->
 				</div> <!-- /.theme-menu-two -->
 			</div> <!-- /.header-style-two -->
-
-
 
 			<!-- Inner Banner _______________________ -->
 			<div class="inner-banner">
@@ -190,8 +184,16 @@
 
 			<!-- Google Map _______________________ -->
 			<div id="google-map-area" class="container">
-				<div class="google-map" id="contact-google-map" data-map-lat="40.925372" data-map-lng="-74.276544" data-icon-path="images/logo/map.png" data-map-title="Find Map" data-map-zoom="12"></div>
-	   		 </div>
+				
+             <iframe
+              src="https://www.google.com/maps?q=26.430951965271507,50.117661382932475&output=embed"
+              width="100%"
+              height="400"
+              style="border:0; border-radius:10px;"
+              allowfullscreen=""
+              loading="lazy">
+               </iframe>
+                </div>
 
 
 
@@ -398,8 +400,7 @@
 		<script type="text/javascript" src="vendor/revolution/revolution.extension.actions.min.js"></script>
 
 		<!-- Google map js -->
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ8VrXgGZ3QSC-0XubNhuB2uKKCwqVaD0&callback=googleMap" type="text/javascript"></script> <!-- Gmap Helper -->
-		<script src="vendor/gmaps.min.js"></script>
+		
 		<!-- Bootstrap Select JS -->
 		<script type="text/javascript" src="vendor/bootstrap-select/dist/js/bootstrap-select.js"></script>
 		<!-- WOW js -->
@@ -417,7 +418,10 @@
 
 		<!-- Theme js -->
 		<script type="text/javascript" src="js/theme.js"></script>
-		<script type="text/javascript" src="js/map-script.js"></script>
+
+		 <!-- Contact form js -->
+		<script type="text/javascript" src="js/contact-form-handler.js"></script>
+		
 		<script src="js/script.js"></script>
 		<script src="js/slider.js"></script>
 

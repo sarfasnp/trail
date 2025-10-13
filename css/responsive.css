@@ -207,3 +207,56 @@
   .shop-details-wrapper .related-product h4 {margin-bottom: 75px;}
   #banner .tp-caption {display: none;}
 }
+
+
+
+/* ===== Default desktop logo size ===== */
+.header-style-one .logo img,
+.header-style-two .logo img {
+  max-width: 271px;   /* set a fixed max size for big screens */
+  height: auto;
+  display: inline-block;
+}
+
+/* ===== Fix header logo float/size for small screens ===== */
+@media (max-width: 991px) {
+  .header-style-one .logo,
+  .header-style-two .logo {
+    float: none !important;
+    text-align: center;
+    margin: 0 auto 20px;
+    display: block;
+  }
+
+  .header-style-two .logo.float-left,
+  .header-style-one .logo.float-left {
+    float: none !important;
+  }
+
+  .header-style-two .logo img,
+  .header-style-one .logo img {
+    max-width: 336px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-style-two .logo img,
+  .header-style-one .logo img {
+    max-width: 110px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-style-two .logo img,
+  .header-style-one .logo img {
+    max-width: 90px;
+  }
+}
+/* ===== Extra-large screens (like 1400px and above) ===== */
+@media (min-width: 1400px) {
+  .header-style-one .logo img,
+  .header-style-two .logo img {
+    max-width: 335px;  /* or 350px depending on how big you want */
+  }
+}
+/* end */

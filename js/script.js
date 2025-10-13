@@ -195,3 +195,142 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+
+//end//
+
+// for the following company (our value based services) //
+
+$(".companies-slider").owlCarousel({
+  items: 3,
+  margin: 30,
+  loop: true,
+  nav: false,                   // ❌ no arrows
+  dots: true,                   // ✅ keep dots
+  dotsContainer: '.companies-dots', // ✅ send dots here
+  autoplay: true,
+  autoplayTimeout: 5000,
+  responsive: {
+    0: { items: 1 },
+    600: { items: 2 },
+    1000: { items: 3 }
+  }
+});
+
+
+// for the APECO section gallery //
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Options for outer carousels (Industrial Supply + QA/QC)
+  const outerOptions = {
+    type: 'loop',
+    perPage: 3,
+    perMove: 1,
+    autoplay: true,
+    interval: 2000,   // move every 2 seconds
+    pagination: true, // ✅ keep dots only for outer carousels
+    arrows: false,    // ✅ no big arrows for outer carousels
+    gap: '25px',
+    breakpoints: {
+      992: { perPage: 2 },
+      600: { perPage: 1 }
+    }
+  };
+
+  // Mount outer carousels
+  if (document.querySelector('#productsSplide')) {
+    new Splide('#productsSplide', outerOptions).mount();
+  }
+  if (document.querySelector('#qaQcSplide')) {
+    new Splide('#qaQcSplide', outerOptions).mount();
+  }
+
+  // Options for inner product sliders (inside each card)
+  const innerOptions = {
+    type: 'loop',
+    perPage: 1,
+    perMove: 1,
+    arrows: true,     // ✅ left/right buttons visible
+    pagination: false, // ✅ no dots inside cards
+    gap: '0.5rem',
+    keyboard: true,
+    drag: true,
+    height: '160px',
+    breakpoints: {
+      992: { height: '150px' },
+      600: { height: '210px' }
+    }
+  };
+
+  // Mount all inner sliders (one per product card)
+  document.querySelectorAll('.product-splide').forEach(function (el) {
+    new Splide(el, innerOptions).mount();
+  });
+});
+
+
+//END//
+
+// for the BITS section our partners (bayanat&inf) //
+
+document.addEventListener('DOMContentLoaded', function () {
+  const cards = Array.from(document.querySelectorAll('.partner-card'));
+
+  if (!cards.length) return;
+
+  // Ensure cards are focusable (keyboard accessibility)
+  cards.forEach(card => {
+    if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
+  });
+
+  // Toggle on click/tap (ignore if clicking the CTA link)
+  document.addEventListener('click', function (e) {
+    const clickedCard = e.target.closest('.partner-card');
+    const clickedLink = e.target.closest('.cta-link');
+
+    if (clickedLink) {
+      // let link work normally
+      return;
+    }
+
+    if (clickedCard) {
+      // close other cards first
+      cards.forEach(c => { if (c !== clickedCard) c.classList.remove('is-open'); });
+      // toggle clicked card
+      clickedCard.classList.toggle('is-open');
+    } else {
+      // click outside -> close all
+      cards.forEach(c => c.classList.remove('is-open'));
+    }
+  });
+
+  // Close on Escape when a card is focused
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      cards.forEach(c => c.classList.remove('is-open'));
+    }
+  });
+});
+//END//
+
+// google translate //
+
+  function triggerTranslate(lang) {
+    var select = document.querySelector("select.goog-te-combo");
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+    }
+  }
+
+  document.getElementById("switchEn").addEventListener("click", function(e) {
+    e.preventDefault();
+    triggerTranslate("en");
+  });
+
+  document.getElementById("switchAr").addEventListener("click", function(e) {
+    e.preventDefault();
+    triggerTranslate("ar");
+  });
+
+  // end//
+  

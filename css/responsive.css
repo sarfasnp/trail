@@ -279,6 +279,7 @@
   .mobile-navbar {
     position: relative;
     z-index: 9999 !important; /* Higher than banner */
+	  margin-top: -23px;
   }
   
   .mobile-nav-links {

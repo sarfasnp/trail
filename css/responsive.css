@@ -242,16 +242,17 @@
 @media (max-width: 480px) {
   .header-style-two .logo img,
   .header-style-one .logo img {
-    max-width: 110px;
+    max-width: 300px !important;  /* was 110px */
   }
 }
 
 @media (max-width: 360px) {
   .header-style-two .logo img,
   .header-style-one .logo img {
-    max-width: 90px;
+    max-width: 130px !important;  /* was 90px */
   }
 }
+
 /* ===== Extra-large screens (like 1400px and above) ===== */
 @media (min-width: 1400px) {
   .header-style-one .logo img,
@@ -260,3 +261,53 @@
   }
 }
 /* end */
+
+
+
+/* ===== Fix mobile navbar z-index issue ===== */
+/* This ensures the mobile menu appears above the banner and other elements */
+
+
+@media (max-width: 991px) {
+  /* Existing mobile styles... */
+  
+  /* Fix mobile navbar z-index */
+  .mobile-navbar {
+    position: relative;
+    z-index: 9999 !important; /* Higher than banner */
+  }
+  
+  .mobile-nav-links {
+    position: relative;
+    z-index: 9999 !important;
+  }
+  
+  /* Ensure banner doesn't overlap menu */
+  #banner {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .rev_slider_wrapper {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Keep header below mobile menu */
+  .header-style-two {
+    position: relative;
+    z-index: 998;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

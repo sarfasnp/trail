@@ -334,3 +334,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // end//
   
+
+  // mobile nav bar //
+
+
+function toggleMobileNav(btn) {
+  btn.classList.toggle('active');
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+function toggleDropdown(el) {
+  el.nextElementSibling.classList.toggle('open');
+}
+function toggleSub(el) {
+  el.nextElementSibling.classList.toggle('open');
+}
+
+
+
+// end //
+
+

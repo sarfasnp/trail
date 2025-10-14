@@ -3850,69 +3850,135 @@ body.csw-edge-visible #cswEdgeRight {
 /* ===============================
    MOBILE & TABLET (≤991px)
    =============================== */
+/* Modern Rounded Gradient Mobile Menu Redesign */
+/* Compact Blue-Gold Mobile Menu Theme */
 @media (max-width: 991px) {
-  /* make dropdowns flow naturally */
-  .ps-dropdown,
-  .ps-sub {
-    position: static !important;
-    min-width: 100% !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    display: none !important; /* hidden by default */
+  /* Navbar container */
+  .navbar-collapse {
+    background: linear-gradient(180deg, #1a3b8b 0%, #0f245d 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 90%;
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
   }
 
-  /* when parent <li> has .menu-open (set by JS), show submenu */
+  /* Main nav links */
+  .navbar-nav > li > a {
+    color: #ffffff;
+    font-size: 15px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    display: block;
+    background: rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease;
+  }
+
+  .navbar-nav > li > a:hover,
+  .navbar-nav > li.current-page-item > a {
+    background: rgba(255, 215, 0, 0.15);
+    color: #fac800;
+  }
+
+  /* Dropdown containers */
+  .ps-dropdown, .ps-sub {
+    position: static !important;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-8px);
+    background: #0e1c44;
+    border-radius: 8px;
+    border-left: 3px solid #fac800;
+    transition: all 0.4s ease;
+  }
+
   #navbar-collapse-1 li.menu-open > .ps-dropdown,
   #navbar-collapse-1 li.menu-open > .ps-sub {
-    display: block !important;
+    max-height: 400px;
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  /* parent links as toggles */
+  /* Parent menu links */
   .ps-dropdown .ps-item > .ps-parent {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px;
-    font-size: 16px;
-    color: #333;
+    padding: 10px 16px;
+    font-size: 15px;
+    color: #fac800;
+    background: #183573;
+    border-radius: 6px;
+    margin: 4px 0;
+    transition: all 0.3s ease;
   }
 
-  /* caret indicator */
-  .ps-dropdown .ps-item > .ps-parent::after {
-    content: "▾";
-    font-size: 12px;
-    margin-left: 8px;
-    transition: transform .25s ease;
+  .ps-dropdown .ps-item > .ps-parent:hover {
+    background: #204494;
+    color: #fff;
   }
+
+  /* Caret icon */
+  .ps-dropdown .ps-item > .ps-parent::after {
+    content: "\25BC";
+    font-size: 10px;
+    color: #fac800;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+  }
+
   .ps-item.menu-open > .ps-parent::after {
     transform: rotate(180deg);
   }
 
-  /* submenu links */
+  /* Submenu links */
   .ps-sub li a {
-    padding: 10px 18px;
-    font-size: 15px;
-    color: #555;
-    background: #fff;
+    display: block;
+    padding: 8px 22px;
+    font-size: 14px;
+    color: #f1f1f1;
+    background: #10295d;
+    border-left: 2px solid transparent;
+    transition: all 0.3s ease;
   }
-  .ps-sub li a:hover { background: #f2f2f2; color: #222; }
-}
 
-/* Prevent blue navbar from expanding when dropdown opens */
-.theme-menu-two .main-menu {
-  position: relative;
-  overflow: visible !important;  /* allow dropdown to extend outside */
-}
+  .ps-sub li a:hover {
+    background: #1c3a7d;
+    border-left: 2px solid #fac800;
+    color: #fff;
+  }
 
-/* Make sure dropdowns float above, not push content */
-.theme-menu-two .main-menu .ps-dropdown,
-.theme-menu-two .main-menu .sub-menu {
-  position: absolute !important;
-  top: 100%;   /* start just below the blue bar */
-  left: 0;
-  z-index: 9999;
-}
+  /* Submenu animation */
+  .ps-item.menu-open > .ps-sub li {
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: fadeSlideIn 0.4s ease forwards;
+  }
 
+  .ps-item.menu-open > .ps-sub li:nth-child(1) { animation-delay: 0.05s; }
+  .ps-item.menu-open > .ps-sub li:nth-child(2) { animation-delay: 0.1s; }
+  .ps-item.menu-open > .ps-sub li:nth-child(3) { animation-delay: 0.15s; }
+  .ps-item.menu-open > .ps-sub li:nth-child(4) { animation-delay: 0.2s; }
+
+  @keyframes fadeSlideIn {
+    0% { opacity: 0; transform: translateX(-8px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Active state */
+  .ps-sub li.active a {
+    background: #204494;
+    color: #fac800;
+    border-left: 2px solid #fac800;
+  }
+
+  /* Add a glow when open */
+  #navbar-collapse-1 li.menu-open > .ps-parent {
+    box-shadow: inset 0 0 10px rgba(250, 200, 0, 0.25);
+  }
+}
 
 
 
@@ -4434,7 +4500,7 @@ body.csw-edge-visible #cswEdgeRight {
 /* Section Heading */
 #products-gallery .products-head {
   text-align: left;
-  margin-bottom: 42px; /* breathing room */
+  margin-bottom: 42px;
   position: relative;
 }
 #products-gallery .products-head h2.theme-title-style {
@@ -4482,7 +4548,7 @@ body.csw-edge-visible #cswEdgeRight {
 /* Product Card */
 .products-carousel .service-card {
   background: #1e1e1e;
-  border: 2px solid #333;       /* default dark border */
+  border: 2px solid #333;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(0,0,0,0.35);
@@ -4494,8 +4560,8 @@ body.csw-edge-visible #cswEdgeRight {
 }
 
 .products-carousel .service-card:hover {
-  border-color: #d1a043;        /* dark yellow border on hover */
-  box-shadow: 0 4px 14px rgba(209,160,67,0.5); /* subtle yellow glow */
+  border-color: #d1a043;
+  box-shadow: 0 4px 14px rgba(209,160,67,0.5);
 }
 
 .products-carousel .service-card:hover h3,
@@ -4506,10 +4572,10 @@ body.csw-edge-visible #cswEdgeRight {
 /* Inner Image Carousel */
 .product-splide {
   border-bottom: 1px solid #333;
-  position: relative;
-  border-top-left-radius: 16px;   /* match card radius */
+  position: relative !important;
+  border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 .product-splide .splide__track {
   height: 180px;
@@ -4596,38 +4662,32 @@ body.csw-edge-visible #cswEdgeRight {
   box-shadow: 0 4px 12px rgba(209,160,67,0.4);
 }
 
-/* Pagination (desktop default) */
-#productsSplide,
-#qaQcSplide {
-  padding-bottom: 100px !important;
-  position: relative !important;
-  overflow: visible !important;
-}
-#productsSplide .splide__pagination,
-#qaQcSplide .splide__pagination {
+/* Pagination (inside product images, fixed position) */
+.product-splide .splide__pagination {
   position: absolute !important;
+  bottom: 10px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  bottom: 20px !important;
   display: flex !important;
   justify-content: center !important;
-  gap: 16px !important;
-  z-index: 5 !important;
+  width: 100% !important;
+  flex-wrap: nowrap !important;
+  z-index: 10 !important;
 }
-#productsSplide .splide__pagination__page,
-#qaQcSplide .splide__pagination__page {
-  width: 12px !important;
-  height: 12px !important;
+
+.product-splide .splide__pagination__page {
+  width: 10px !important;
+  height: 10px !important;
   background: #666 !important;
   border-radius: 50% !important;
-  opacity: 0.75 !important;
+  margin: 0 4px !important;
+  opacity: 0.8 !important;
   transition: all 0.3s ease !important;
 }
-#productsSplide .splide__pagination__page.is-active,
-#qaQcSplide .splide__pagination__page.is-active {
+
+.product-splide .splide__pagination__page.is-active {
   background: #fac800 !important;
   transform: scale(1.25) !important;
-  box-shadow: 0 0 12px rgba(250,200,0,0.7) !important;
 }
 
 /* Responsive tweaks */
@@ -4635,18 +4695,23 @@ body.csw-edge-visible #cswEdgeRight {
   .product-splide .splide__track { height: 160px; }
   .product-splide .splide__slide img { height: 160px; }
 }
+
 @media (max-width: 600px) {
   .product-splide .splide__track { height: 220px; }
   .product-splide .splide__slide img { height: 220px; }
   .products-carousel .splide__slide { padding: 0 6px; }
-
-  /* fix pagination dots alignment for small screens */
-  #productsSplide .splide__pagination,
-  #qaQcSplide .splide__pagination {
-    bottom: 10px !important; /* bring closer */
-    gap: 12px !important;    /* smaller spacing */
+  .product-splide .splide__pagination {
+    bottom: 12px !important;
+    gap: 10px !important;
   }
 }
+
+
+
+
+/* ===== END ===== */
+
+
 
 /*end */
 
@@ -4912,6 +4977,7 @@ body.csw-edge-visible #cswEdgeRight {
   justify-content: center;
   margin-top: 40px;   /* was 25px → now dots are lower */
   gap: 10px;
+  margin-bottom: -19px; /* adjust if needed */
 }
 
 
@@ -6046,8 +6112,7 @@ body.csw-edge-visible #cswEdgeRight {
   .main-clients-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
-    max-width: 100%;
-  }
+    max-width: 78%;  /* fit smaller screens */}
   .main-clients-grid img {
     max-height: 130px;
     padding: 8px;
@@ -6056,15 +6121,15 @@ body.csw-edge-visible #cswEdgeRight {
 
 @media (max-width: 480px) {
   .main-clients-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3 1fr);
     gap: 6px;
+    margin-top: -18px;  
   }
   .main-clients-grid img {
     max-height: 90px;
     padding: 6px;
   }
 }
-
 
 /* ===== BITS Partners Section (scoped) ===== */
 .bits-partners {
@@ -6114,6 +6179,7 @@ body.csw-edge-visible #cswEdgeRight {
   background: #f9f9f9;
   position: relative;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .bits-partner-card:hover {
@@ -6122,13 +6188,22 @@ body.csw-edge-visible #cswEdgeRight {
 
 .bits-card-front {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
+  padding: 30px;
 }
 
 .bits-partner-logo {
   width: 210px;
+  margin-bottom: 20px;
+}
+
+.bits-card-front h3 {
+  font-size: 1.4rem;
+  color: #111;
+  font-weight: 700;
 }
 
 /* Overlay */
@@ -6143,7 +6218,13 @@ body.csw-edge-visible #cswEdgeRight {
   transition: transform 0.4s ease;
 }
 
+/* Hover effect for desktop */
 .bits-partner-card:hover .bits-card-overlay {
+  transform: translateY(0);
+}
+
+/* Touch effect for mobile - same as hover */
+.bits-partner-card.active .bits-card-overlay {
   transform: translateY(0);
 }
 
@@ -6151,12 +6232,16 @@ body.csw-edge-visible #cswEdgeRight {
   font-size: 1.3rem;
   margin-bottom: 20px;
   line-height: 1.6;
+  color: #fff;
 }
 
 .bits-card-overlay ul {
-  margin: 0 0 25px 18px;
+  list-style: disc;
+  margin: 0 0 25px 20px;
+  padding: 0;
   font-size: 1.2rem;
   line-height: 1.6;
+  color: #fff;
 }
 
 /* CTA Button */
@@ -6168,39 +6253,184 @@ body.csw-edge-visible #cswEdgeRight {
   padding: 10px 20px;
   border-radius: 6px;
   text-decoration: none;
+  display: inline-block;
   transition: all 0.3s ease;
 }
+
 .bits-cta-link:hover {
   background: #1e1e1e;
   color: #f1c40f;
   border: 1px solid #f1c40f;
 }
 
-/* Responsive */
+/* Mobile adjustments - keep same size and effect */
 @media (max-width: 768px) {
+  .bits-partners {
+    padding: 60px 20px;
+  }
+  
+  .bits-section-title {
+    font-size: 2.2rem;
+  }
+  
+  .bits-section-subtitle {
+    font-size: 1.2rem;
+  }
+  
   .bits-partners-grid {
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
   }
+  
   .bits-partner-card {
-    width: 100%;
-    height: auto;
+    width: 90%;
+    max-width: 380px;
   }
+  
   .bits-card-overlay {
-    position: relative;
-    transform: none;
-    padding: 30px 22px;
+    padding: 35px 25px;
   }
-  .bits-partner-card:hover .bits-card-overlay {
-    transform: none;
+  
+  .bits-card-overlay p {
+    font-size: 1.2rem;
+  }
+  
+  .bits-card-overlay ul {
+    font-size: 1.1rem;
   }
 }
 
 
+
 /* end */
 
-/* Font change for Bits section */
+/* mobile nav bar */
+/* =======================
+   FINAL MOBILE NAVBAR FIX
+   ======================= */
+@media (max-width: 991px) {
+  /* Hide the desktop version completely */
+  .theme-menu-two { display: none !important; }
+
+  .mobile-navbar {
+    background: linear-gradient(180deg, #1e4fa0 0%, #0f285f 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    padding: 10px 14px;
+    width: 90%;
+    margin: 12px auto;
+  }
+
+  .mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .quote-btn {
+    background: #fac800;
+    color: #111;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 34px;
+  }
+  .hamburger span {
+    display: block;
+    height: 3px;
+    background: #fff;
+    margin: 6px 0;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background: #fac800;
+  }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background: #fac800;
+  }
+
+  /* Menu Container */
+  .mobile-nav-links {
+    display: none;
+    background: #0f285f;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .mobile-nav-links.open {
+    display: block;
+    animation: fadeSlide 0.4s ease forwards;
+  }
+
+  .mobile-nav-links a,
+  .mobile-nav-links button {
+    display: block;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 14px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-nav-links a:hover,
+  .mobile-nav-links button:hover {
+    background: rgba(250,200,0,0.15);
+    color: #fac800;
+  }
+
+  /* Dropdown Menus */
+  .dropdown-menu, .sub-menu {
+    display: none;
+    background: #183573;
+  }
+  .dropdown-menu.open, .sub-menu.open {
+    display: block;
+    animation: fadeSlide 0.4s ease forwards;
+  }
+
+  /* Sub dropdown header */
+  .sub-dropdown button {
+    background: #1b366f;
+    border-left: 3px solid #fac800;
+  }
+  .sub-menu a {
+    padding-left: 28px;
+    font-size: 14px;
+    color: #eaeaea;
+  }
+
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Hide mobile navbar on desktop */
+@media (min-width: 992px) {
+  .mobile-navbar { display: none !important; }
+}
 
 
+
+
+
+
+/* end */
 
 

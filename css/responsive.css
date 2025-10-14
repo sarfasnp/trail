@@ -242,7 +242,11 @@
 @media (max-width: 480px) {
   .header-style-two .logo img,
   .header-style-one .logo img {
+<<<<<<< HEAD
     max-width: 300px !important;  /* was 110px */
+=======
+    max-width: 300px;
+>>>>>>> a69d06447cbbd8c23843fdefa8cb54b47f90e2b9
   }
 }
 

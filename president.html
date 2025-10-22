@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,6 +32,7 @@
 <body>
     <div class="main-page-wrapper">
 
+      
 			<!-- Header _________________________________ -->
 			<div class="header-style-two">
 				<header>
@@ -73,10 +75,18 @@
 										<span style="font-size: 14px;"> Saudi Arabia</span>
 									</li>
 									<li>
-										<form action="#">
-											<input type="text" placeholder="Search Here...">
-											<button><i class="fa fa-search" aria-hidden="true"></i></button>
-										</form>
+											 <!-- ====== SEARCH BAR ====== -->
+                                    <div class="search-container">
+                                    <form onsubmit="event.preventDefault(); searchSite();">
+                                    <input type="text" id="searchInput" placeholder="Search Here..." onkeyup="searchSite()">
+                                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </form>
+                                    <div id="searchResults" class="search-results"></div>
+                                    </div>
+
+                                    <!-- Include the search script -->
+                                    <script src="js/search.js"></script>
+
 									</li>
 								</ul>
 							</div> <!-- /.right-side -->
@@ -220,8 +230,7 @@
 </div>
 			<!-- End of Mobile Navbar -->
 
-            
-<!-- Inner Banner _______________________ -->
+        <!-- Inner Banner _______________________ -->
         <div class="inner-banner">
             <div class="opacity">
                 <div class="container">
@@ -230,7 +239,6 @@
             </div>
         </div>
 
-        
         <!-- Page Navigation ____________________ -->
         <div class="page-navigation">
             <div class="container">
@@ -242,6 +250,7 @@
                 <a href="https://wa.me/?text=https://albassamgroups.com" class="float-right share tran3s hvr-bounce-to-right"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</a>
             </div>
         </div> <!-- /.page-navigation -->
+
 
 
 
@@ -272,12 +281,12 @@
   <!-- RIGHT: Text content -->
   <div class="vp-right-half">
     <div class="vp-column vp-column-1-2 vp-hero-right-col">
-      <label class="vp-box-header" lng-tag="welcomeabc">PRESIDENT</label>
+      <label class="vp-box-header" lng-tag="welcomeabc"> PRESIDENT</label>
       <h2 class="vp-box-header vp-margin-top-15" lng-tag="technohead">
-         Salah Mohammed Albassam
+          Salah Mohammed Albassam
       </h2>
       <h5 class="vp-margin-top-40" lng-tag="techabcdesc">
-      Albassam Group is a renowned Group of companies with diversified industrial and commercial interests.
+        Albassam Group is a renowned Group of companies with diversified industrial and commercial interests.
        The Group started to create values for country and region in 1955 with trading in petroleum equipment to Saudi Aramco.
         Over the years, the group expanded its operations across diversified sectors including, Trading, Petroleum Services,
          NDT & Laboratory Services, Manufacturing, Contracting, Travel & Tourism, Automobiles, Water Treatment, Real Estate
@@ -298,6 +307,14 @@
   </div>
 
 </div>
+
+
+
+
+
+
+
+
 
 
 

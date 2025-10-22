@@ -2565,24 +2565,32 @@ footer .bottom-footer p a {
   align-items: flex-start;
 }
 
-.about-company.about-us-page-fix .img-wrapper.two-up .single-img{
+.about-company.about-us-page-fix .img-wrapper.two-up .single-img {
   position: relative;
   width: 50%;
+  height: 420px;
   overflow: hidden;
-  border-radius: 14px;
+  border: 3px solid #dbb351;   /* gold border */
+  border-radius: 14px;         /* rounded corners */
+  box-sizing: border-box;      /* stable layout */
   box-shadow: 0 10px 22px rgba(0,0,0,.08);
   isolation: isolate;
   transform: translateY(6px);
   animation: fadeUp .8s ease-out both;
 }
 
-.about-company.about-us-page-fix .img-wrapper.two-up .single-img img{
-  display: block;
+
+.about-company.about-us-page-fix .img-wrapper.two-up .single-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 100%;
-  height: 420px;
+  height: 100%;
   object-fit: cover;
+  transform: translate(-50%, -50%) scale(1);
   transition: transform .6s ease, filter .6s ease, opacity .4s ease;
 }
+
 
 /* Subtle grain/lines overlay */
 .about-company.about-us-page-fix .img-wrapper.two-up .single-img::before{
@@ -2610,10 +2618,11 @@ footer .bottom-footer p a {
 }
 
 /* Hover */
-.about-company.about-us-page-fix .img-wrapper.two-up .single-img:hover img{
-  transform: scale(1.04);
+.about-company.about-us-page-fix .img-wrapper.two-up .single-img:hover img {
+  transform: translate(-50%, -50%) scale(1.1);
   filter: saturate(1.06) contrast(1.03);
 }
+
 .about-company.about-us-page-fix .img-wrapper.two-up .single-img:hover::after{
   left: 120%;
 }
@@ -4585,13 +4594,15 @@ body.csw-edge-visible #cswEdgeRight {
 }
 .product-splide .splide__slide img {
   width: 100%;
-  height: 180px;
-  object-fit: contain;
-  background: #fff;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  height: 200px;              /* adjust height if needed */
+  object-fit: cover;          /* ✅ fills the entire frame */
+  background: none;           /* ✅ removes white padding effect */
+  border-radius: 0;           /* keeps corners clean */
+  display: block;
+  margin: 0 auto;
   transition: transform 0.4s ease, filter 0.3s ease;
 }
+
 .service-card:hover .splide__slide img {
   transform: scale(1.05);
   filter: brightness(1.1);
@@ -6434,3 +6445,71 @@ body.csw-edge-visible #cswEdgeRight {
 /* end */
 
 
+/* ====== SEARCH DROPDOWN ONLY ====== */
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 6px 0;
+  margin-top: 5px;
+  display: none;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.25s ease;
+}
+
+.search-results.show {
+  opacity: 1;
+  transform: translateY(0);
+  display: block;
+}
+
+.search-results a.result-item {
+  display: block;
+  padding: 10px 16px;
+  color: #222;
+  text-decoration: none;
+  font-size: 15px;
+  border-bottom: 1px solid #f1f1f1;
+  transition: background 0.2s, color 0.2s;
+}
+
+.search-results a.result-item:last-child {
+  border-bottom: none;
+}
+
+.search-results a.result-item:hover {
+  background: #fac800; /* light yellow background */
+  color: #222; /* keep text readable */
+}
+
+.search-results .no-results {
+  padding: 10px 16px;
+  color: #777;
+  font-style: italic;
+}
+
+
+
+/* end */
+
+
+/* our client <p> */
+
+.clients-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 10px auto 40px auto;
+  font-size: 19px;
+  line-height: 28px;
+  color: #555; /* or adjust to your theme color */
+  margin-top: -33px;
+}
+
+/* END */

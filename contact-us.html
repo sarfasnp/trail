@@ -75,10 +75,18 @@
 										<span style="font-size: 14px;"> Saudi Arabia</span>
 									</li>
 									<li>
-										<form action="#">
-											<input type="text" placeholder="Search Here...">
-											<button><i class="fa fa-search" aria-hidden="true"></i></button>
-										</form>
+											 <!-- ====== SEARCH BAR ====== -->
+                                    <div class="search-container">
+                                    <form onsubmit="event.preventDefault(); searchSite();">
+                                    <input type="text" id="searchInput" placeholder="Search Here..." onkeyup="searchSite()">
+                                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </form>
+                                    <div id="searchResults" class="search-results"></div>
+                                    </div>
+
+                                    <!-- Include the search script -->
+                                    <script src="js/search.js"></script>
+
 									</li>
 								</ul>
 							</div> <!-- /.right-side -->
@@ -399,7 +407,7 @@
 
 	        				</ul>
 	        				<ul>
-	        					<li><a href="blog.html" class="tran3s"><i class="fa fa-angle-right" aria-hidden="true"></i> News </a></li>
+	        					<li><a href="#" class="tran3s"><i class="fa fa-angle-right" aria-hidden="true"></i> News </a></li>
 	        					
 	        					<li><a href="contact-us.html" class="tran3s"><i class="fa fa-angle-right" aria-hidden="true"></i> Contact us</a></li>
 	        					<li><a href="#" class="tran3s"><i class="fa fa-angle-right" aria-hidden="true"></i> FAQ</a></li>
@@ -429,16 +437,17 @@
 								<li><span class="ficon flaticon-map-solid"></span> Dammam 31461 Kingdom of Saudi Arabia</li>
 								<li><span class="ficon flaticon-call-solid"></span> +966138051313</li>
 								<li><span class="ficon flaticon-envelope"></span> info@albassamgroups.com</li>
-								<li><span class="ficon flaticon-clock"></span> 8:00pm - 4:00pm<br>Friday and Sunday Closed</li>
+								<li><span class="ficon flaticon-clock"></span> 8:00pm - 4:00pm<br>Friday and Saturday Closed</li>
 							</ul>
 	        			</div>
 	        		</div> <!-- /.top-footer -->
 	        	</div> <!-- /.container -->
 
 	        	<div class="bottom-footer">
-	        		<p>Cpyright 2025 <a href="https://albassamgroups.com/" target="_blank" class="tran3s p-color">@Al Bassam Group Of Companies</a> </p>
+	        		<p>Copyright 2025 <a href="https://albassamgroups.com/" target="_blank" class="tran3s p-color">@Al Bassam Group Of Companies</a> </p>
 	        	</div>
 	        </footer>
+
 
 	        <!-- Scroll Top Button -->
 			<button class="scroll-top tran3s p-color-bg round-border">

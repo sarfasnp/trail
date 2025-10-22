@@ -83,10 +83,18 @@
 										<span style="font-size: 14px;"> Saudi Arabia</span>
 									</li>
 									<li>
-										<form action="#">
-											<input type="text" placeholder="Search Here...">
-											<button><i class="fa fa-search" aria-hidden="true"></i></button>
-										</form>
+											 <!-- ====== SEARCH BAR ====== -->
+                                    <div class="search-container">
+                                    <form onsubmit="event.preventDefault(); searchSite();">
+                                    <input type="text" id="searchInput" placeholder="Search Here..." onkeyup="searchSite()">
+                                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </form>
+                                    <div id="searchResults" class="search-results"></div>
+                                    </div>
+
+                                    <!-- Include the search script -->
+                                    <script src="js/search.js"></script>
+
 									</li>
 								</ul>
 							</div> <!-- /.right-side -->
@@ -236,6 +244,8 @@
 				<div class="opacity">
 					<div class="container">
 						<h2  style="font-size: 40px;">Our Clients</h2>
+
+					
 					</div>
 				</div>
 			</div>
@@ -257,6 +267,7 @@
 <!--  client Logos grid -->
 <section class="main-clients-section">
   <h2 class="main-clients-heading">OUR VALUED CLIENTS</h2>
+ <p class="clients-description">We’re proud to have worked with a diverse range of clients, delivering innovative solutions and building lasting partnerships through trust and quality service.</p>
   <div class="main-clients-grid">
     <img src="images/logos2/1.png" alt="Client 1">
     <img src="images/logos2/2.png" alt="Client 2">

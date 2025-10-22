@@ -82,10 +82,18 @@
 										<span style="font-size: 14px;"> Saudi Arabia</span>
 									</li>
 									<li>
-										<form action="#">
-											<input type="text" placeholder="Search Here...">
-											<button><i class="fa fa-search" aria-hidden="true"></i></button>
-										</form>
+											 <!-- ====== SEARCH BAR ====== -->
+                                    <div class="search-container">
+                                    <form onsubmit="event.preventDefault(); searchSite();">
+                                    <input type="text" id="searchInput" placeholder="Search Here..." onkeyup="searchSite()">
+                                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </form>
+                                    <div id="searchResults" class="search-results"></div>
+                                    </div>
+
+                                    <!-- Include the search script -->
+                                    <script src="js/search.js"></script>
+
 									</li>
 								</ul>
 							</div> <!-- /.right-side -->
@@ -518,8 +526,8 @@
   </svg>
 
   <!-- image -->
-  <img src="images/inner-page/2.jpg" alt="Group Chairman">
-
+  <a href="vicepresident.html"><img src="images/inner-page/2.jpg" alt="Group Chairman">
+</a>
 
 </div>
 
@@ -534,7 +542,7 @@
         <path fill="#dbb351" d="M0,50H45A45,45,0,0,1,90,95v45...Z"/>
       </svg>
 
-      <img src="images/inner-page/3.jpg" alt="Group Executive">
+    <a href="president.html">  <img src="images/inner-page/3.jpg" alt="Group Executive"> </a>
     </div>
   </div>
 </div> <!-- /.left-half -->

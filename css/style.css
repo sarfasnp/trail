@@ -4794,8 +4794,8 @@ body.csw-edge-visible #cswEdgeRight {
 
 
 .leader-name {
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 750;
   margin-bottom: 8px;
   color: #111;
 }
@@ -4836,7 +4836,7 @@ body.csw-edge-visible #cswEdgeRight {
 
 
 .leader-section {
-  padding: 0px 10%;
+  padding: 0px 14%;
   background: #fff;
 }
 
@@ -6473,7 +6473,7 @@ body.csw-edge-visible #cswEdgeRight {
 .search-results a.result-item {
   display: block;
   padding: 10px 16px;
-  color: #222;
+  color: #76808a;
   text-decoration: none;
   font-size: 15px;
   border-bottom: 1px solid #f1f1f1;
@@ -6485,7 +6485,7 @@ body.csw-edge-visible #cswEdgeRight {
 }
 
 .search-results a.result-item:hover {
-  background: #fac800; /* light yellow background */
+  background: #fff8cc; /* light yellow background */
   color: #222; /* keep text readable */
 }
 
@@ -6511,5 +6511,26 @@ body.csw-edge-visible #cswEdgeRight {
   color: #555; /* or adjust to your theme color */
   margin-top: -33px;
 }
+
+/* END */
+
+
+
+
+/* ===== Force Company Info Background Stability ===== */
+/* ===== Company Info Background - No Jump on Refresh ===== */
+.company-info {
+  background: url(../images/home/1.jpg) no-repeat center center !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  margin: 110px 0 0 0;
+}
+
+.company-info .opacity {
+  height: 100%;
+  background: rgba(19,68,141,0.9);
+  padding: 75px 0 75px 0;
+}
+
 
 /* END */

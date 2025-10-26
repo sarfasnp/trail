@@ -242,11 +242,10 @@
 @media (max-width: 480px) {
   .header-style-two .logo img,
   .header-style-one .logo img {
-<<<<<<< HEAD
+
     max-width: 300px !important;  /* was 110px */
-=======
     max-width: 300px;
->>>>>>> a69d06447cbbd8c23843fdefa8cb54b47f90e2b9
+
   }
 }
 
@@ -271,48 +270,172 @@
 /* ===== Fix mobile navbar z-index issue ===== */
 /* This ensures the mobile menu appears above the banner and other elements */
 
-
+/* ===== Search Dropdown Mobile Fix ===== */
 @media (max-width: 991px) {
-  /* Existing mobile styles... */
-  
-  /* Fix mobile navbar z-index */
-  .mobile-navbar {
+  /* Ensure search container has higher z-index on mobile */
+  .search-container {
     position: relative;
-    z-index: 9999 !important; /* Higher than banner */
-	  margin-top: -23px;
+    z-index: 10000 !important; /* Higher than mobile navbar's 9999 */
   }
   
+  /* Search results dropdown */
+  .search-results {
+    position: absolute;
+    top: 100%;
+    left: 59px;
+    width: 68%;
+    z-index: 10001 !important; /* Even higher to be above everything */
+  }
+  
+  /* Ensure mobile nav stays below search when open */
   .mobile-nav-links {
     position: relative;
-    z-index: 9999 !important;
+    z-index: 9998 !important; /* Below search dropdown */
   }
-  
-  /* Ensure banner doesn't overlap menu */
-  #banner {
+}
+
+/* END */
+
+
+/* ===== Search Dropdown - Proper Width for All Devices ===== */
+
+/* Desktop - dropdown matches search input width */
+.search-container {
+  position: relative;
+  width: 250px; /* matches form width from style.css */
+}
+
+/* ====== SEARCH DROPDOWN (Desktop Style - White with Light Grey Text + Yellow Hover) ====== */
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: auto;
+  background: #ffffff; /* white background */
+  border: 1px solid #e5e5e5; /* light border */
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* subtle dropdown shadow */
+  padding: 6px 0;
+  margin-top: 5px;
+  display: none;
+  z-index: 10000 !important;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Show dropdown */
+.search-results.show {
+  opacity: 1;
+  transform: translateY(0);
+  display: block;
+}
+
+/* Each search result item */
+.search-results a.result-item {
+  display: block;
+  padding: 10px 16px;
+  font-size: 15px;
+  color: #76808a; /* light grey text like menu dropdown */
+  background: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #f2f2f2;
+  transition: color 0.25s ease;
+}
+
+/* Hover - only text turns yellow */
+.search-results a.result-item:hover {
+  color: #fac800; /* yellow text on hover */
+  font-weight: 600; /* slightly bold for clarity */
+  background: #fff; /* stay white */
+}
+
+/* Remove border for last item */
+.search-results a.result-item:last-child {
+  border-bottom: none;
+}
+
+/* No results message */
+.search-results .no-results {
+  background: #fff;
+  color: #777;
+  font-style: italic;
+  padding: 10px 16px;
+}
+
+/* ===== Responsive Adjustments ===== */
+
+/* Desktop - dropdown matches search input width */
+.search-container {
+  position: relative;
+  width: 250px; /* same as search input width */
+}
+
+/* Mobile - full width */
+@media (max-width: 991px) {
+  .search-container {
     position: relative;
-    z-index: 1;
+    z-index: 10000 !important;
+    width: 100%;
   }
-  
-  .rev_slider_wrapper {
-    position: relative;
-    z-index: 1;
+
+  .search-results {
+    max-height: 250px;
+    overflow-y: auto;
+    font-size: 14px;
+    left: 0;
+    right: 0;
+    width: 100%;
   }
-  
-  /* Keep header below mobile menu */
-  .header-style-two {
-    position: relative;
-    z-index: 998;
+
+  .search-results a.result-item {
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.3;
   }
+
+  .search-results .no-results {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .search-results {
+    max-height: 200px;
+    font-size: 13px;
+  }
+
+  .search-results a.result-item {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .search-results .no-results {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+/* Smooth fade-slide animation for dropdown items */
+.search-results.show a.result-item {
+  opacity: 0;
+  transform: translateX(-6px);
+  animation: fadeSlideIn 0.3s ease forwards;
+}
+.search-results.show a.result-item:nth-child(1) { animation-delay: 0.05s; }
+.search-results.show a.result-item:nth-child(2) { animation-delay: 0.1s; }
+.search-results.show a.result-item:nth-child(3) { animation-delay: 0.15s; }
+.search-results.show a.result-item:nth-child(4) { animation-delay: 0.2s; }
+
+@keyframes fadeSlideIn {
+  0% { opacity: 0; transform: translateX(-6px); }
+  100% { opacity: 1; transform: translateX(0); }
 }
 
 
 
-
-
-
-
-
-
-
-
-
+/* END */

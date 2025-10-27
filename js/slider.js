@@ -39,7 +39,7 @@
       { name: "outside", start: 5, end: 7 } // Outside: 3 certs
     ];
   }
-  else if (path.includes("techno")) {
+  else if (path.includes("techno-serve")) {
     console.log('✅ Techno page detected');
     // ===== TECHNO SERVE PAGE =====
     gallery = [

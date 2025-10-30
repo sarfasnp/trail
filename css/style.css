@@ -34,6 +34,7 @@
 /**
 * Importing necessary  Styles.
 **/
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap');
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,500,700,800,900|Roboto:300,400,500,700');
 /*----bootstrap css ----- */
@@ -131,13 +132,13 @@
        url('../fonts/font-awesome/fonts/fontawesome-webfont.svg') format('svg'); /* Legacy iOS */
  }
 
- body {
-  font-family: 'Roboto', sans-serif;
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: normal;
-  color:#6c6c6c;
+  color: #6c6c6c;
   font-size: 18px;
   position: relative;
- }
+}
 
  body .main-page-wrapper {
    overflow-x:hidden;
@@ -1380,137 +1381,9 @@
   color:#fff;
   margin-bottom: 40px;
 }
-/*========================= Footer ================*/
-footer {
-  background: #282828;
-  padding: 58px 0 0 0;
-}
-footer .top-footer h4 {
-  font-size: 28px;
-  font-weight: 700;
-  color:#fff;
-  margin-bottom: 30px;
-}
-footer .footer-logo {
-  width: 25%;
-   
 
-}
-footer .footer-logo .logo {
-  margin-top: -15px;
-}
-footer .footer-logo p {
-  font-size: 17px;
-  color:#fff;
-  margin: 20px 0 30px 0;
-}
-footer .footer-logo ul li {
-  display: inline-block;
-  margin-right: 2px;
-}
-footer .footer-logo ul li a {
-  width: 35px;
-  line-height: 33px;
-  border:1px solid #373737;
-  text-align: center;
-  color:#939393;
-  font-size: 16px;
-}
-footer .footer-logo ul li a:hover {
-  background: #fac800;
-  border-color:#fac800;
-  color:#202020;
-}
-footer .footer-link {
-  width: 26%;
-  padding-left: 75px;
-}
-footer .footer-link ul li {
-  line-height: 38px;
-}
-footer .footer-link ul li a {
-  font-weight: 300;
-  font-size: 17px;
-  color:#fff;
-}
-footer .footer-link ul li i {
-  margin-right: 10px;
-}
-footer .footer-link ul {
-  display: inline-block;
-  vertical-align: top;
-}
-footer .footer-link ul:nth-child(2) {
-  margin-right: 35px;
-}
-footer .footer-twitter-feed {
-  width: 25%;
-  padding-left: 55px;
-}
-footer .footer-twitter-feed ul li {
-  padding-left: 29px;
-  margin-bottom: 20px;
-  position: relative;
-}
-footer .footer-twitter-feed ul li a {
-  font-size: 17px;
-  font-weight: 300;
-  color:#c4c4c4;
-  line-height: 25px;
-  display: block;
-  margin-bottom: 4px;
-}
-footer .footer-twitter-feed ul li a b {
-  font-weight: 500;
-  color:#fff;
-}
-footer .footer-twitter-feed ul li span {
-  font-weight: 300;
-  font-size: 17px;
-}
-footer .footer-twitter-feed ul li .fa {
-  position: absolute;
-  top:5px;
-  left:0;
-  color:#07b2f9;
-}
-footer .footer-address {
-  width: 24%;
-  padding-left: 55px;
-}
-footer .footer-address ul li {
-  line-height: 28px;
-  font-size: 17px;
-  font-weight: 300;
-  color:#fff;
-  margin-bottom: 16px;
-  position: relative;
-  padding-left: 38px;
-}
-footer .footer-address ul li span {
-  position: absolute;
-  top:1px;
-  left:0;
-}
-footer .footer-address ul li span:before {
-  font-size: 20px;
-  padding-left: 2px;
-}
-footer .footer-address ul li span.flaticon-map-solid:before {
-  font-size: 25px;
-}
-footer .bottom-footer {
-  background: #252525;
-  text-align: center;
-  padding: 12px 0;
-  margin-top: 37px;
-}
-footer .bottom-footer p {
-  color:#a5a0a0;
-}
-footer .bottom-footer p a {
-  font-weight: 300;
-}
+
+
 /*========================= Inner Banner ====================*/
 .inner-banner {
   background: url(../images/inner-page/1.jpg) no-repeat center;
@@ -3767,13 +3640,6 @@ body.csw-edge-visible #cswEdgeRight {
   transform: translateY(-6px);     /* lift */
   box-shadow: 0 22px 46px rgba(209,160,67,0.3); /* gold shadow */
 }
-
-
-
-
-
-
-
 
 
 /* submenu i made */
@@ -6530,6 +6396,427 @@ body.csw-edge-visible #cswEdgeRight {
   height: 100%;
   background: rgba(19,68,141,0.9);
   padding: 75px 0 75px 0;
+}
+
+
+/* END */
+
+
+
+
+
+/*========================= Footer ================*/
+
+/* Import Modern Professional Font - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Modern Footer */
+.modern-footer {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Animated Gold Top Border */
+.modern-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #fac800 25%, 
+    #d1a043 50%, 
+    #fac800 75%, 
+    transparent 100%);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Main Footer Content */
+.footer-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 20px 40px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1.1fr;
+  gap: 50px;
+  position: relative;
+  z-index: 1;
+  align-items: start;
+}
+
+/* Company Info Section */
+.footer-company {
+  padding-right: 20px;
+}
+
+.footer-logo {
+  margin-bottom: 25px;
+}
+
+/* ✅ FIXED: Logo shows original colors (no filter) */
+.footer-logo img {
+  max-width: 220px;
+  height: auto;
+  display: block;
+  /* REMOVED filter that was making logo white */
+}
+
+.footer-company p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 25px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-social a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background: #fac800;
+  border-color: #fac800;
+  color: #1a1a1a;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(250,200,0,0.3);
+}
+
+/* Footer Columns */
+.footer-column h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 22px;
+  position: relative;
+  padding-bottom: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.footer-column h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 45px;
+  height: 2.5px;
+  background: linear-gradient(90deg, #fac800, #d1a043);
+  border-radius: 2px;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 14.5px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.footer-links a:hover {
+  color: #fac800;
+  padding-left: 8px;
+}
+
+.footer-links a i {
+  font-size: 11px;
+  margin-right: 10px;
+  color: #fac800;
+  min-width: 12px;
+}
+
+/* Contact Info */
+.footer-contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  font-size: 14.5px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.65;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.footer-contact li i {
+  font-size: 17px;
+  color: #fac800;
+  margin-right: 12px;
+  margin-top: 2px;
+  min-width: 17px;
+}
+
+/* Newsletter */
+.footer-newsletter p {
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.65;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.newsletter-form {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 13px 16px;
+  border: 1.5px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border-radius: 8px 0 0 8px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(255,255,255,0.5);
+  font-weight: 400;
+}
+
+.newsletter-form input:focus {
+  background: rgba(255,255,255,0.12);
+  border-color: #fac800;
+}
+
+.newsletter-form button {
+  padding: 13px 26px;
+  background: linear-gradient(135deg, #fac800, #d1a043);
+  border: none;
+  color: #1a1a1a;
+  font-weight: 700;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.newsletter-form button:hover {
+  background: linear-gradient(135deg, #d1a043, #fac800);
+  transform: translateX(2px);
+  box-shadow: 0 4px 12px rgba(250,200,0,0.3);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background: rgba(0,0,0,0.25);
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.footer-bottom-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-copyright {
+  color: rgba(255,255,255,0.65);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.footer-copyright a {
+  color: #fac800;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-copyright a:hover {
+  color: #fff;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-links a {
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.footer-bottom-links a:hover {
+  color: #fac800;
+}
+
+/* Scroll to Top Button */
+.scroll-top-modern {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #fac800, #d1a043);
+  border: none;
+  border-radius: 50%;
+  color: #1a1a1a;
+  font-size: 19px;
+  cursor: pointer;
+  box-shadow: 0 5px 18px rgba(250,200,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-top-modern:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(250,200,0,0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 50px 20px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .footer-company {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .footer-logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-column {
+    text-align: center;
+  }
+
+  .footer-column h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-links a {
+    justify-content: center;
+  }
+
+  .footer-contact li {
+    justify-content: center;
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+  }
+
+  .scroll-top-modern {
+    width: 48px;
+    height: 48px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-main {
+    padding: 40px 15px 25px;
+  }
+
+  .footer-column h4 {
+    font-size: 16px;
+  }
+
+  .footer-logo img {
+    max-width: 180px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form input {
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .newsletter-form button {
+    border-radius: 8px;
+    width: 100%;
+  }
 }
 
 
